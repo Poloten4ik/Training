@@ -1,31 +1,37 @@
 ﻿using System;
 using System.Globalization;
+using ConsoleApp3.scripts;
 
 namespace ConsoleApp2
-{
-    
-     
+{        
     public class Program
     {
         public static void Main(string[] args)
         {
             Sorting numSorting = new Sorting();
 
-            int[] x = new int[] { 5, 6, 4, 7, 2, 3, 1, 0, 10, 8, 9 };
-            int[] arrAsc = numSorting.OrderAsc(x);
+            var x = new int[] { 5, 6, 4, 7, 2, 3, 1, 0, 10, 8, 9 };
+            var arrAsc = numSorting.OrderAsc(x);
             for (int i = 0; i < x.Length; i++)
             {
                 Console.WriteLine(arrAsc[i]);
             }
-            int[] arrDesc = numSorting.OrderDesc(x);
+            var arrDesc = numSorting.OrderDesc(x);
             for (int i = 0; i < x.Length; i++)
             {
                 Console.WriteLine(arrDesc[i]);
             }
-            Variant2 variant2 = new Variant2();
-            variant2.OrderedAsc(x);
+
+            SortingConst variant2 = new SortingConst(x);
+            var orderedAsc = variant2.OrderedAsc();
+            var orderedDesc = variant2.OrderedDesc();
+
+
+
+            var orderedStaticAsc = SortingStatic.OrderedAsc(x);
+            var orderedStaticDesc = SortingStatic.OrderedDesc(x);
         }
-        
+
     }
 
    
