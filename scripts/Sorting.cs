@@ -3,6 +3,12 @@ namespace ConsoleApp3.scripts
 {
     public class Sorting
     {
+        public Sorting(int[] arr)
+        {
+            sortingNum = arr;
+        }
+        private int[] sortingNum;
+ 
         public int[] OrderAsc(int[] x)
         {
             int result;
@@ -38,13 +44,6 @@ namespace ConsoleApp3.scripts
                 }
             }
             return x;
-        }
-
-        private int[] sortingNum;
-
-        public Sorting(int[] arr)
-        {
-            sortingNum = arr;
         }
 
         public int[] OrderAsc()
