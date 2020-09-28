@@ -8,10 +8,8 @@ namespace ConsoleApp3.scripts
             int result;
             for (int i = 0; i < x.Length; i++)
             {
-
                 for (int j = i + 1; j < x.Length; j++)
                 {
-
                     if (x[i] > x[j])
                     {
                         result = x[i];
@@ -21,7 +19,6 @@ namespace ConsoleApp3.scripts
                 }
             }
             return x;
-
         }
         public int[] OrderDesc(int[] x)
         {
@@ -41,6 +38,63 @@ namespace ConsoleApp3.scripts
                 }
             }
             return x;
+        }
+
+        private int[] sortingNum;
+
+        public Sorting(int[] arr)
+        {
+            sortingNum = arr;
+        }
+
+        public int[] OrderAsc()
+        {
+            int temp;
+            var result = CopyArray();
+
+            for (int i = 0; i < sortingNum.Length; i++)
+            {
+                for (int j = 0; j < sortingNum.Length; j++)
+                {
+                    if (result[i] < result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public int[] OrderDesc()
+        {
+            int temp;
+            var result = CopyArray();
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = 0; j < result.Length; j++)
+                {
+                    if (result[i] < result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+            return result;
+        }
+
+        private int[] CopyArray()
+        {
+            var result = new int[sortingNum.Length];
+            for (int i = 0; i < sortingNum.Length; i++)
+            {
+                result[i] = sortingNum[i];
+            }
+            return result;
         }
     }
 }
