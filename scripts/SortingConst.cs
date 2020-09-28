@@ -4,12 +4,13 @@ namespace ConsoleApp3.scripts
 {
     public class SortingConst
     {
-        private int[] sortingNum;
 
         public SortingConst(int[] arr)
         {
             sortingNum = arr;
         }
+
+        private int[] sortingNum;
 
         public int[] OrderedAsc()
         {

@@ -8,8 +8,6 @@ namespace ConsoleApp2
     {
         public static void Main(string[] args)
         {
-            
-
             var x = new int[] { 5, 6, 4, 7, 2, 3, 1, 0, 10, 8, 9 };
             var numSorting = new Sorting(x);
 
